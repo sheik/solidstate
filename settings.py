@@ -83,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '0zm9s)jd4x-@w=y37y4q$*(+qbkx6yu98xy^0me1pt&m5-2=eh'
+SECRET_KEY = 'hFH98723hdsl;adghH#@kj23h5!@!K!JH$kjh313thlk#@hjhbvsd'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -103,6 +103,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'solidstate.urls'
 
 TEMPLATE_DIRS = (
+    "/root/Projects/solidstate/templates",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -115,6 +116,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'solidstate.blog',
     'south',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',

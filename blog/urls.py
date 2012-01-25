@@ -4,11 +4,11 @@ from django.conf.urls.defaults import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('solidstate.blog.views',
     # Examples:
     # url(r'^$', 'solidstate.views.home', name='home'),
     # url(r'^solidstate/', include('solidstate.foo.urls')),
-    url(r'^blog/', include('solidstate.blog.urls')),
+    url(r'^$', 'home'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
