@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Solid State</title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/forms.css" />
+{% block head %} {% endblock head %}
+
+
+</head>
+<body class="dashboard"{% block body-tag %}{% endblock %}>
+{% if request.debug %}
+<div id="debug">
+    Debug Mode Enabled
+</div>
+{% endif %}
+<div id="header">
+    <div id="branding">
+        <h1 id="site-name">Solid State</h1>
+        <ul id="admin_nav">
+        	<li><a href="/">Dashboard</a></li>
+            <li><a href="/courses/list/all/">Courses</a></li>
+            <li><a href="/files/list/all/">Files</a></li>
+            <li><a href="/bulletin/">Bulletin</a></li>
+        </ul>
+	<span style="display:block;text-align: right; width: 68%;">{% if request.user.is_authenticated%}Welcome, {% filter force_escape|capfirst %}{% firstof request.user.first_name request.user.last_name %}{% endfilter %}. &nbsp; <a href="/accounts/logout/" style="text-decoration: underline;">Sign out</a>{%endif%}</span>
+    </div>
+</div>
+<div id="main">
+    <div id="content_header">
+        <h2>{% block content_header %}{% endblock %}</h2>
+    </div>
+
+    <div id="content">
+    {% if messages %}
+    <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+    {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+</div>
+<div id="right-side">
+    {% block right-side %}{% endblock right-side %}
+</div>
+
+</body>
+</html>
