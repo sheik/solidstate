@@ -7,6 +7,7 @@ from django.conf.urls.defaults import patterns, include, url
 urlpatterns = patterns('',
     url(r'^$', 'solidstate.blog.views.home'),
     url(r'^blog/', include('solidstate.blog.urls')),
+    url(r'^websites/', include('solidstate.websites.urls')),
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),

@@ -123,6 +123,7 @@ INSTALLED_APPS = (
 
     # Solid State Apps
     'solidstate.blog',
+    'solidstate.websites',
 
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
